@@ -4,11 +4,10 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<link rel="icon" href="../img/logo-sm-grey.png">
 <title>Administrator Dashboard</title>
 
 <!-- Custom fonts for this template-->
-<link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<script src="https://kit.fontawesome.com/f4d04cc260.js" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="../css/admin/styles-admin.css" type="text/css">
 

@@ -32,7 +32,6 @@
     Master Data
   </div>
 
-  <?php if ($_SESSION['level'] == "1") { ?>
     <!-- Nav Item - Users -->
     <li class="nav-item <?php echo $current_page == 'users' ? 'active' : '' ?>">
       <a href="users.php" class="nav-link">
@@ -41,7 +40,6 @@
       </a>
     </li>
 
-  <?php } ?>
 
   <!-- Nav Item - Messages -->
   <li class="nav-item <?php echo $current_page == 'messages' ? 'active' : '' ?>">
