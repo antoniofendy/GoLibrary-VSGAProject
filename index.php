@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include "./lib/config.php";
     $_SESSION['current_page'] = "index";
 ?>
 
@@ -29,102 +30,29 @@
             <div class="col-12 mb-4 text-center">
                 <h1>Koleksi <span style="color: #007bff;">Terpopuler</span></h1>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-flex align-items-center flex-column text-center">
-                <div class="card-deck">
-                    <div class="card text-center">
-                        <a href="#" style="text-decoration:none;">
-                            <img class="card-img-top" src="https://covers.zlibcdn2.com/covers299/books/92/f2/b9/92f2b9c15bf98c5128ceae1ad78fc650.jpg" alt="Card image">
-                            <div class="card-body">
-                                <p class="card-text text-muted">Computers - Programming</p>
-                                <a style="text-decoration:none;" href="#"><h5 class="card-title">Fu Cheng</h5></a>
-                                <div class="card-footer">
-                                    <i class="fas fa-star" style="color: #d4af37;"></i> 5.0
+            <?php 
+                $rs = mysqli_query($con, "SELECT * FROM buku ORDER BY `isbn` ASC");
+                while ($data = mysqli_fetch_array($rs)) {
+            ?>
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-flex align-items-center flex-column text-center">
+                    <div class="card-deck">
+                        <div class="card text-center">
+                            <a href="#" style="text-decoration:none;">
+                                <img class="card-img-top" src="./admin/storage/book_cover/<?= $data['cover']; ?>" alt="Card image">
+                                <div class="card-body">
+                                    <p class="card-text text-muted"><?= $data['kategori']; ?></p>
+                                    <a style="text-decoration:none;" href="#"><h5 class="card-title"><?= $data['penulis']; ?></h5></a>
+                                    <div class="card-footer">
+                                        <i class="fas fa-star" style="color: #d4af37;"></i> <?= $data['rating']; ?>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-flex align-items-center flex-column text-center">
-                <div class="card-deck">
-                    <div class="card text-center">
-                        <a href="#" style="text-decoration:none;">
-                            <img class="card-img-top" src="https://covers.zlibcdn2.com/covers299/books/2f/25/24/2f25249c71ab98c720b019fed27de501.jpg" alt="Card image">
-                            <div class="card-body">
-                                <p class="card-text text-muted">Computers - Programming</p>
-                                <a style="text-decoration:none;" href="#"><h5 class="card-title">Robert Johansson</h5></a>
-                                <div class="card-footer">
-                                    <i class="fas fa-star" style="color: #d4af37;"></i> 4.5
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-flex align-items-center flex-column text-center">
-                <div class="card-deck">
-                    <div class="card text-center">
-                        <a href="#" style="text-decoration:none;">
-                            <img class="card-img-top" src="https://covers.zlibcdn2.com/covers299/books/c0/c1/dd/c0c1ddedd6a0f1337baac04a6fcf0978.jpg" alt="Card image">
-                            <div class="card-body">
-                                <p class="card-text text-muted">Computers - Programming</p>
-                                <a style="text-decoration:none;" href="#"><h5 class="card-title">Magnus Lie Hetland</h5></a>
-                                <div class="card-footer">
-                                    <i class="fas fa-star" style="color: #d4af37;"></i> 5.0
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-flex align-items-center flex-column text-center">
-                <div class="card-deck">
-                    <div class="card text-center">
-                        <a href="#" style="text-decoration:none;">
-                            <img class="card-img-top" src="https://covers.zlibcdn2.com/covers299/books/22/7f/03/227f03b36ad6b1b4c6c1af4ca444c27d.jpg" alt="Card image">
-                            <div class="card-body">
-                                <p class="card-text text-muted">Computers - Programming</p>
-                                <a style="text-decoration:none;" href="#"><h5 class="card-title">Frank Zammetti</h5></a>
-                                <div class="card-footer">
-                                    <i class="fas fa-star" style="color: #d4af37;"></i> 5.0
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-flex align-items-center flex-column text-center">
-                <div class="card-deck">
-                    <div class="card text-center">
-                        <a href="#" style="text-decoration:none;">
-                            <img class="card-img-top" src="https://covers.zlibcdn2.com/covers299/books/df/bf/03/dfbf03cb54fd9a66c88965b235206d0d.jpg" alt="Card image">
-                            <div class="card-body">
-                                <p class="card-text text-muted">Fiction</p>
-                                <a style="text-decoration:none;" href="#"><h5 class="card-title">Agatha Christie</h5></a>
-                                <div class="card-footer">
-                                    <i class="fas fa-star" style="color: #d4af37;"></i> 5.0
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-flex align-items-center flex-column text-center">
-                <div class="card-deck">
-                    <div class="card text-center">
-                        <a href="#" style="text-decoration:none;">
-                            <img class="card-img-top" src="https://covers.zlibcdn2.com/covers299/books/b6/64/9e/b6649e537794b130262f1d3df7e20489.jpg" alt="Card image">
-                            <div class="card-body">
-                                <p class="card-text text-muted">Fiction</p>
-                                <a style="text-decoration:none;" href="#"><h5 class="card-title">Agatha Christie</h5></a>
-                                <div class="card-footer">
-                                    <i class="fas fa-star" style="color: #d4af37;"></i> 5.0
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <?php 
+                };
+            ?>
         </div>
         <div class="row pt-5">
             <div class="col-12 pl-4">

@@ -13,31 +13,31 @@ $(function () {
     }
 });
 
-// Hiding scroll to top button
-window.onscroll = () => {
-    const scrollToTop = document.getElementById('BtnScrollToTop');
-    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-        scrollToTop.style.display = "flex";
-    }
-    else {
-        scrollToTop.style.display = "none";
-    }
-}
+// // Hiding scroll to top button
+// window.onscroll = () => {
+//     const scrollToTop = document.getElementById('BtnScrollToTop');
+//     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+//         scrollToTop.style.display = "flex";
+//     }
+//     else {
+//         scrollToTop.style.display = "none";
+//     }
+// }
 
-//Jquery
-$('document').ready(function () {
+// //Jquery
+// $('document').ready(function () {
 
-    // ScrollToTop
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 500) {
-            $('#BtnScrollToTop').fadeIn();
-        } else {
-            $('#BtnScrollToTop').fadeOut();
-        }
-    });
+//     // ScrollToTop
+//     $(window).scroll(function () {
+//         if ($(this).scrollTop() > 500) {
+//             $('#BtnScrollToTop').fadeIn();
+//         } else {
+//             $('#BtnScrollToTop').fadeOut();
+//         }
+//     });
 
-    $('#BtnScrollToTop').click(function () {
-        $('html, body').animate({ scrollTop: 0 }, 300);
-        return false;
-    });
-});
+//     $('#BtnScrollToTop').click(function () {
+//         $('html, body').animate({ scrollTop: 0 }, 300);
+//         return false;
+//     });
+// });

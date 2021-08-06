@@ -87,8 +87,8 @@
                     </div>
                     <div class="form-group">
                         <label for="berkas">Berkas Buku*</label>
-                        <input type="file" class="form-control-file" accept=".pdf" name="berkas" id="berkas" required>
-                        <small class="form-text mt-1 mb-0 text-muted">Hanya PDF.</small>
+                        <input type="file" class="form-control-file" accept=".pdf, .epub" name="berkas" id="berkas" required>
+                        <small class="form-text mt-1 mb-0 text-muted">Hanya PDF dan EPUB</small>
                     </div>
                     <div class="form-group">
                         <label for="judul">Judul</label>
