@@ -81,8 +81,8 @@
                 <!-- Form -->
                 <form id="form-body" action="index.php" class="needs-validation" novalidate autocomplete="off" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="book">Book Cover*</label>
-                        <input type="file" class="form-control-file" accept="image/jpg, image/png, image/jpeg" name="book" id="book" required>
+                        <label for="cover">Book Cover*</label>
+                        <input type="file" class="form-control-file" accept="image/jpg, image/png, image/jpeg" name="cover" id="book" required>
                         <small class="form-text mt-1 mb-0 text-muted">Minimum dimensi 250x250 px.</small>
                     </div>
                     <div class="form-group">

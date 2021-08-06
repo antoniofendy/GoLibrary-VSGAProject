@@ -65,6 +65,9 @@ include "_include-admin/head.php";
 
   <!-- Bootstrap core JavaScript-->
   <?php include "_include-admin/javascript.php"; ?>
+
+  <!-- Logout Modal-->
+  <?php include "_include-admin/modal.php"; ?>
 </body>
 
 </html>

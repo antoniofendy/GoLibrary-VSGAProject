@@ -1,6 +1,5 @@
 <?php
     session_start();
-    include "lib/data.php";
     $_SESSION['current_page'] = "katalog";
 ?>
 
@@ -45,8 +44,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-12 mb-4 text-center">
                 <h1>Daftar <span style="color: #007bff;">Katalog</span></h1>
-                <p>Untuk melihat dan mengatur data buku</p>
-                <a class="btn btn-primary mt-3" href="form.php" role="button"><i class="fas fa-plus"></i> Tambah Buku</a>
+                <p>Kumpulan rekomendasi buku untukmu</p>
             </div>
             <div class="list-group ml-2 mr-2">
                 <a href="edit.php" class="list-group-item list-group-item-action">

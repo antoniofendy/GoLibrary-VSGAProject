@@ -35,43 +35,10 @@
     <!-- Nav Item - Users -->
     <li class="nav-item <?php echo $current_page == 'users' ? 'active' : '' ?>">
       <a href="users.php" class="nav-link">
-        <i class="fas fa-user-friends"></i>
-        <span>Users</span>
+        <i class="fas fa-book"></i>
+        <span>Book</span>
       </a>
     </li>
-
-
-  <!-- Nav Item - Messages -->
-  <li class="nav-item <?php echo $current_page == 'messages' ? 'active' : '' ?>">
-    <a href="messages.php" class="nav-link">
-      <i class="fas fa-envelope"></i>
-      <span>Messages</span>
-    </a>
-  </li>
-
-  <!-- Nav Item - Articles -->
-  <li class="nav-item <?php echo $current_page == 'articles' ? 'active' : '' ?>">
-    <a href="articles.php" class="nav-link">
-      <i class="fas fa-align-center"></i>
-      <span>Articles</span>
-    </a>
-  </li>
-
-  <!-- Nav Item - Locations -->
-  <li class="nav-item <?php echo $current_page == 'locations' ? 'active' : '' ?>">
-    <a href="locations.php" class="nav-link">
-      <i class="fas fa-map-marked-alt"></i>
-      <span>Locations</span>
-    </a>
-  </li>
-
-  <!-- Nav Item - Hotels -->
-  <li class="nav-item <?php echo $current_page == 'hotels' ? 'active' : '' ?>">
-    <a href="hotels.php" class="nav-link">
-      <i class="fas fa-hotel"></i>
-      <span>Hotels</span>
-    </a>
-  </li>
 
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">

@@ -1,6 +1,5 @@
 <?php
     session_start();
-    include "lib/data.php";
     $_SESSION['current_page'] = "index";
 ?>
 
