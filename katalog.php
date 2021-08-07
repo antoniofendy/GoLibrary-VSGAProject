@@ -65,7 +65,7 @@
             </div>
             <div class="list-group ml-2 mr-2">
                 <?php 
-                    $rs = mysqli_query($con, "SELECT * FROM buku ORDER BY `rating` ASC LIMIT 6");
+                    $rs = mysqli_query($con, "SELECT * FROM buku ORDER BY `rating` DESC LIMIT 6");
                     while ($data = mysqli_fetch_array($rs)) {
                 ?>
                     <a href="edit.php" class="list-group-item list-group-item-action">
