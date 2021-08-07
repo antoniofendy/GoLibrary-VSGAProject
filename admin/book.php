@@ -4,10 +4,11 @@ $current_page = 'book';
 include 'access/session-handler.php';
 include '../lib/config.php';
 
-include "_include-admin/head.php";
+include "./_include-admin/head.php";
 ?>
 
 <body id="page-top">
+    
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -68,6 +69,8 @@ include "_include-admin/head.php";
 
     <!-- Bootstrap core JavaScript-->
     <?php include "_include-admin/javascript.php"; ?>
+
+    
 </body>
 
 </html>
@@ -76,33 +79,35 @@ include "_include-admin/head.php";
 
 <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
-<script src="../js/admin/demo/datatables-demo.js"></script>
 
 <script>
   $(document).ready(function() {
-    $('#locationTable').DataTable({
+    $('#bookTable').DataTable({
       "order": [0, 'asc'],
       "columns": [{
-          "width": "20px"
+          "width": "30px"
         },
-        null,
         {
-          "width": "60px",
-          "orderable": false
+          "width": "300px",
+          "orderable": true
+        },
+        {
+          "width": "150px",
+          "orderable": true
         },
         {
           "searchable": false,
-          "width": "100px",
-          "orderable": false
+          "width": "60px",
+          "orderable": true
         },
       ],
       language: {
-        emptyTable: "No location data"
+        emptyTable: "Tidak ada data yang dapat ditampilkan"
       },
       "dom": "<'row'<'col-12 col-md-2 p-0 mb-2 mb-md-0 text-md-left text-center'<'#newBtn.btn btn-sm btn-primary shadow-sm p-0'>><'col-12 col-md-10 text-right d-inline-block'f>>t<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>"
     });
 
-    $('<a href="locations.php?action=new" class="btn btn-sm btn-primary shadow-sm accent-font-t"><i id="newBtnText" class="fas fa-plus fa-sm text-white-50"></i> New</a>').appendTo('#newBtn');
+    $('<a href="book.php?action=new" class="btn btn-sm btn-primary shadow-sm accent-font-t"><i id="newBtnText" class="fas fa-plus fa-sm text-white-50"></i> New</a>').appendTo('#newBtn');
   });
 
   function deleteConfirm(url) {
@@ -110,3 +115,4 @@ include "_include-admin/head.php";
     $('#deleteModal').modal();
   }
 </script>
+

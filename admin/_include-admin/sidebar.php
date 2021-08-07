@@ -32,9 +32,9 @@
     Master Data
   </div>
 
-    <!-- Nav Item - Users -->
-    <li class="nav-item <?php echo $current_page == 'users' ? 'active' : '' ?>">
-      <a href="users.php" class="nav-link">
+    <!-- Nav Item - Book -->
+    <li class="nav-item <?php echo $current_page == 'book' ? 'active' : '' ?>">
+      <a href="book.php" class="nav-link">
         <i class="fas fa-book"></i>
         <span>Book</span>
       </a>

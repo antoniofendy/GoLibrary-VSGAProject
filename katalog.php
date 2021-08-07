@@ -85,7 +85,7 @@
                                         <p><span style="color:#9788a7;">Bahasa:</span> <?= $data['bahasa']; ?></p>
                                     </div>
                                     <div class="rating">
-                                        <i class="fas fa-star" style="color: #d4af37;"></i> <?= $data['rating']; ?>
+                                        <i class="fas fa-star" style="color: #d4af37;"></i>: <?= $data['rating']; ?>
                                     </div>
                                 </div>
                             </div>

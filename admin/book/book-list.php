@@ -43,35 +43,35 @@ if (isset($_GET['message'])) {
         <div class="card shadow mb-4">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="locationTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered" id="bookTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Location Name</th>
-                                <th>Views</th>
+                                <th>ISBN</th>
+                                <th>Judul</th>
+                                <th>Penulis</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>ID</th>
-                                <th>Location Name</th>
-                                <th>Views</th>
+                                <th>ISBN</th>
+                                <th>Judul</th>
+                                <th>Penulis</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             <?php
-                            $rs = mysqli_query($con, "SELECT * FROM locations ORDER BY `id` ASC");
+                            $rs = mysqli_query($con, "SELECT * FROM buku ORDER BY `isbn` ASC");
 
                             while ($data = mysqli_fetch_array($rs)) {
                             ?><tr>
-                                    <td><?= $data['id'] ?></td>
-                                    <td><?= $data['name'] ?></td>
-                                    <td><?= $data['viewed_number'] ?></td>
+                                    <td><?= $data['isbn'] ?></td>
+                                    <td><?= $data['judul'] ?></td>
+                                    <td><?= $data['penulis'] ?></td>
                                     <td class="text-center">
-                                        <a href="locations.php?view=<?= $data['id'] ?>" class="btn btn-small"><i class="fas fa-pen"></i></a>
-                                        <a onclick="deleteConfirm('location/location-delete.php?delete=<?= $data['id'] ?>')" href="#" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
+                                        <a href="book.php?view=<?= $data['isbn'] ?>" class="btn btn-small"><i class="fas fa-pen"></i></a>
+                                        <a onclick="deleteConfirm('book/book-delete.php?delete=<?= $data['isbn'] ?>')" href="#" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>
