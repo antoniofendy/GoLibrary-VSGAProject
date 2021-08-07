@@ -1,7 +1,7 @@
 <?php
 include '../../lib/config.php';
 
-$required = array('isbn', 'judul', 'penulis', 'penerbit', 'bahasa', 'kategori', 'rating');
+$required = array('isbn', 'judul', 'penulis', 'penerbit', 'tahun','bahasa', 'kategori', 'rating');
 
 $error = "";
 
@@ -86,6 +86,12 @@ $acceptable_file = array(
 if($berkas_uploaded){
     // Get book file ext
     $berkas_ext = pathinfo($_FILES["berkas"]["name"], PATHINFO_EXTENSION);
+
+    // Check berkas exists
+    if (!file_exists($_FILES["berkas"]["tmp_name"])) {
+        $message = "no_image";
+        $image_error = true;
+    }
 
     if (!in_array($berkas_ext, $acceptable_file)) {
         $message = "book_false_type";

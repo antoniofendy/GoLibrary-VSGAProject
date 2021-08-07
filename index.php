@@ -31,7 +31,7 @@
                 <h1>Koleksi <span style="color: #007bff;">Terpopuler</span></h1>
             </div>
             <?php 
-                $rs = mysqli_query($con, "SELECT * FROM buku ORDER BY `isbn` ASC");
+                $rs = mysqli_query($con, "SELECT * FROM buku ORDER BY `rating` ASC LIMIT 6");
                 while ($data = mysqli_fetch_array($rs)) {
             ?>
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-flex align-items-center flex-column text-center">
