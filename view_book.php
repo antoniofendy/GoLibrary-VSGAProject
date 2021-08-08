@@ -106,7 +106,7 @@
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi id atque temporibus dicta, dolorem voluptate fugiat, impedit animi ad illum doloremque pariatur eos ipsam facilis velit quod, minima modi maxime.
                             </p>
                             <div class="row">
-                                <div class="col-sm-12 col-md-6">
+                                <div class="col-12">
                                     <table border="0">
                                         <tr>
                                             <td style="color: #658fc4;" width="30%">ISBN</td>
@@ -120,10 +120,6 @@
                                             <td style="color: #658fc4;" width="30%">Bahasa</td>
                                             <td>: <?= $data['bahasa'] ?></td>
                                         </tr>
-                                    </table>
-                                </div>
-                                <div class="col-sm-12 col-md-6">
-                                    <table border="0">
                                         <tr>
                                             <td style="color: #658fc4;" width="31%">Tahun</td>
                                             <td>: <?= $data['tahun'] ?></td>

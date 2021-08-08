@@ -13,6 +13,11 @@
 <body>
 
     <style>
+        #konten {
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
         /* Extra small devices (phones, 600px and down) */
         @media only screen and (max-width: 600px) {
             a.btn {
@@ -21,6 +26,11 @@
 
             .book-list {
                 width: 100%;
+            }
+
+            #konten {
+                padding-left: 0;
+                padding-right: 0;
             }
         }
 
@@ -58,33 +68,37 @@
         </form>
     </div>
     <div class="container pt-5">
-        <div class="row d-flex justify-content-center" id="konten">
+        <div class="row d-flex justify-content-center flex-column" id="konten">
             <div class="col-12 mb-4 text-center">
                 <h1>Koleksi <span style="color: #007bff;">Terpopuler</span></h1>
             </div>
-            <?php 
-                $rs = mysqli_query($con, "SELECT * FROM buku ORDER BY `rating` DESC LIMIT 6");
-                while ($data = mysqli_fetch_array($rs)) {
-            ?>
-                <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-flex align-items-center flex-column text-center">
-                    <div class="card-deck">
-                        <div class="card text-center">
-                            <a href="view_book.php?isbn=<?= $data['isbn']; ?>" style="text-decoration:none;">
-                                <img class="card-img-top" src="./admin/storage/book_cover/<?= $data['cover']; ?>" alt="Card image">
-                                <div class="card-body">
-                                    <p class="card-text text-muted"><?= $data['kategori']; ?></p>
-                                    <a style="text-decoration:none;" href="view_book.php?isbn=<?= $data['isbn']; ?>"><h5 class="card-title"><?= $data['penulis']; ?></h5></a>
-                                    <div class="card-footer">
-                                        <i class="fas fa-star" style="color: #d4af37;"></i> <?= $data['rating']; ?>
-                                    </div>
+            <div id="konten-kolom">
+                <div class="row d-flex justify-content-center flex-row mx-4">
+                    <?php 
+                        $rs = mysqli_query($con, "SELECT * FROM buku ORDER BY `rating` DESC LIMIT 6");
+                        while ($data = mysqli_fetch_array($rs)) {
+                    ?>
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4 text-center">
+                            <div class="card-deck">
+                                <div class="card text-center">
+                                    <a href="view_book.php?isbn=<?= $data['isbn']; ?>" style="text-decoration:none;">
+                                        <img class="card-img-top" src="./admin/storage/book_cover/<?= $data['cover']; ?>" alt="Card image">
+                                        <div class="card-body">
+                                            <p class="card-text text-muted"><?= $data['kategori']; ?></p>
+                                            <a style="text-decoration:none;" href="view_book.php?isbn=<?= $data['isbn']; ?>"><h5 class="card-title"><?= $data['penulis']; ?></h5></a>
+                                            <div class="card-footer">
+                                                <i class="fas fa-star" style="color: #d4af37;"></i> <?= $data['rating']; ?>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                            </a>
+                            </div>
                         </div>
-                    </div>
+                    <?php 
+                        };
+                    ?>
                 </div>
-            <?php 
-                };
-            ?>
+            </div>
         </div>
         <div class="row pt-5" id="benefits">
             <div class="col-12 pl-4">

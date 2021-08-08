@@ -13,6 +13,12 @@
 <body>
 
     <style>
+
+        #konten {
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
         /* Extra small devices (phones, 600px and down) */
         @media only screen and (max-width: 600px) {
             a.btn {
@@ -21,6 +27,11 @@
 
             .book-list {
                 width: 100%;
+            }
+
+            #konten {
+                padding-left: 0;
+                padding-right: 0;
             }
         }
 
@@ -58,7 +69,7 @@
         </form>
     </div>
     <div class="container pt-5">
-        <div class="row d-flex justify-content-center" id="konten">
+        <div class="row d-flex justify-content-center flex-column" id="konten">
             <div class="col-12 mb-4 text-center">
                 <h1>Daftar <span style="color: #007bff;">Katalog</span></h1>
                 <p>Kumpulan rekomendasi buku untukmu</p>
@@ -96,23 +107,6 @@
                 ?>
             </div>
         </div>
-        <nav aria-label="Page navigation" class="d-flex justify-content-center mt-5">
-            <ul class="pagination">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-                </li>
-            </ul>
-        </nav>
     </div>
     
 
