@@ -1,0 +1,5 @@
+RewriteEngine On
+Options All -Indexes
+ErrorDocument 500 /uas/admin/index.php
+ErrorDocument 401 /uas/admin/index.php
+ErrorDocument 404 /uas/admin/index.php

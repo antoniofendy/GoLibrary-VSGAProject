@@ -1,10 +1,10 @@
 <?php
-session_start();
 $current_page = 'book';
 include 'access/session-handler.php';
 include '../lib/config.php';
 
 include "./_include-admin/head.php";
+
 ?>
 
 <body id="page-top">
