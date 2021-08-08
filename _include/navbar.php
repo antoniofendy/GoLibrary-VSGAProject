@@ -14,7 +14,7 @@
             <a class="nav-link" href="katalog.php">Katalog</a>
         </li>
         <li class="nav-item <?php echo $_SESSION['current_page'] == 'akun' ? 'active' : '' ?>">
-            <a class="nav-link" href="#">Akun</a>
+            <a class="nav-link" href="./admin">Akun</a>
         </li>
     </div>
 </nav>

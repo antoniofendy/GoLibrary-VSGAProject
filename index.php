@@ -1,6 +1,7 @@
 <?php
     session_start();
     include "./lib/config.php";
+    include "./ajax/cari.php";
     $_SESSION['current_page'] = "index";
 ?>
 
@@ -10,6 +11,38 @@
 ?>
 
 <body>
+
+    <style>
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            a.btn {
+                width: 100%;
+            }
+
+            .book-list {
+                width: 100%;
+            }
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+            a.btn {
+                width: 100%;
+            }
+
+            .book-list {
+                width: 700px;
+            }
+        } 
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {
+            .book-list { 
+                width: 900px;
+            }
+        }
+        
+    </style>
 
     <!-- Include Navbar -->
     <?php
@@ -21,12 +54,11 @@
         <p class="lead">Platform E-Library yang bisa kamu akses kapanpun dan di manapun</p>
         <hr class="my-4">
         <form class="form-inline my-2 my-lg-0 d-flex justify-content-center" autocomplete="off" action="#">
-            <input class="form-control mr-sm-2" type="search" placeholder="Cari E-Book" aria-label="Search">
-            <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i> Cari</button>
+            <input class="form-control" style="width: 50%" type="text" placeholder="Cari E-Book" aria-label="Search" id="keyword">
         </form>
     </div>
     <div class="container pt-5">
-        <div class="row">
+        <div class="row d-flex justify-content-center" id="konten">
             <div class="col-12 mb-4 text-center">
                 <h1>Koleksi <span style="color: #007bff;">Terpopuler</span></h1>
             </div>
@@ -37,11 +69,11 @@
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-4 d-flex align-items-center flex-column text-center">
                     <div class="card-deck">
                         <div class="card text-center">
-                            <a href="#" style="text-decoration:none;">
+                            <a href="view_book.php?isbn=<?= $data['isbn']; ?>" style="text-decoration:none;">
                                 <img class="card-img-top" src="./admin/storage/book_cover/<?= $data['cover']; ?>" alt="Card image">
                                 <div class="card-body">
                                     <p class="card-text text-muted"><?= $data['kategori']; ?></p>
-                                    <a style="text-decoration:none;" href="#"><h5 class="card-title"><?= $data['penulis']; ?></h5></a>
+                                    <a style="text-decoration:none;" href="view_book.php?isbn=<?= $data['isbn']; ?>"><h5 class="card-title"><?= $data['penulis']; ?></h5></a>
                                     <div class="card-footer">
                                         <i class="fas fa-star" style="color: #d4af37;"></i> <?= $data['rating']; ?>
                                     </div>
@@ -54,7 +86,7 @@
                 };
             ?>
         </div>
-        <div class="row pt-5">
+        <div class="row pt-5" id="benefits">
             <div class="col-12 pl-4">
                 <h1 class="text-center">Keuntungan Menggunakan <span style="color: #007bff;">GoLibrary</span></h1>
                 <div class="row mt-4 ">

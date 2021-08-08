@@ -2,6 +2,7 @@
     session_start();
     $_SESSION['current_page'] = "katalog";
     include "./lib/config.php";
+    include "./ajax/cari.php";
 ?>
 
 <!-- Include Header -->
@@ -53,12 +54,11 @@
         <p class="lead">Platform E-Library yang bisa kamu akses kapanpun dan di manapun</p>
         <hr class="my-4">
         <form class="form-inline my-2 my-lg-0 d-flex justify-content-center" autocomplete="off" action="#">
-            <input class="form-control mr-sm-2" type="search" placeholder="Cari E-Book" aria-label="Search">
-            <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i> Cari</button>
+            <input class="form-control" style="width: 50%" type="text" placeholder="Cari E-Book" aria-label="Search" id="keyword">
         </form>
     </div>
     <div class="container pt-5">
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center" id="konten">
             <div class="col-12 mb-4 text-center">
                 <h1>Daftar <span style="color: #007bff;">Katalog</span></h1>
                 <p>Kumpulan rekomendasi buku untukmu</p>
@@ -68,7 +68,7 @@
                     $rs = mysqli_query($con, "SELECT * FROM buku ORDER BY `rating` DESC LIMIT 6");
                     while ($data = mysqli_fetch_array($rs)) {
                 ?>
-                    <a href="edit.php" class="list-group-item list-group-item-action">
+                    <a href="view_book.php?isbn=<?= $data['isbn']; ?>" class="list-group-item list-group-item-action">
                         <div class="row book-list">
                             <div class="col-sm-0 col-md-2 d-flex justify-content-center">
                                 <img class="img-katalog" src="./admin/storage/book_cover/<?= $data['cover']; ?>" alt="" srcset="">
