@@ -109,32 +109,32 @@
                                 <div class="col-12">
                                     <table border="0">
                                         <tr>
-                                            <td style="color: #658fc4;" width="30%">ISBN</td>
+                                            <td style="color: #658fc4;" width="40%">ISBN</td>
                                             <td>:</td>
                                             <td> <?= $data['isbn'] ?></td>
                                         </tr>
                                         <tr>
-                                            <td style="color: #658fc4;" width="30%">Penerbit</td>
+                                            <td style="color: #658fc4;" width="40%">Penerbit</td>
                                             <td>:</td>
                                             <td> <?= $data['penerbit'] ?></td>
                                         </tr>
                                         <tr>
-                                            <td style="color: #658fc4;" width="30%">Bahasa</td>
+                                            <td style="color: #658fc4;" width="40%">Bahasa</td>
                                             <td>:</td>
                                             <td> <?= $data['bahasa'] ?></td>
                                         </tr>
                                         <tr>
-                                            <td style="color: #658fc4;" width="31%">Tahun</td>
+                                            <td style="color: #658fc4;" width="40%">Tahun</td>
                                             <td>:</td>
                                             <td> <?= $data['tahun'] ?></td>
                                         </tr>
                                         <tr>
-                                            <td style="color: #658fc4;" width="31%">Kategori</td>
+                                            <td style="color: #658fc4;" width="40%">Kategori</td>
                                             <td>:</td>
                                             <td> <?= $data['kategori'] ?></td>
                                         </tr>
                                         <tr>
-                                            <td style="color: #658fc4;" width="31%">Rating</td>
+                                            <td style="color: #658fc4;" width="40%">Rating</td>
                                             <td>:</td>
                                             <td> <i class="fas fa-star" style="color: #d4af37;"></i> <?= $data['rating'] ?></td>
                                         </tr>
