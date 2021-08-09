@@ -32,6 +32,11 @@
                 padding-left: 0;
                 padding-right: 0;
             }
+
+            #book-card {
+                display: flex;
+                justify-content: center;
+            }
         }
 
         /* Medium devices (landscape tablets, 768px and up) */
@@ -78,7 +83,7 @@
                         $rs = mysqli_query($con, "SELECT * FROM buku ORDER BY `rating` DESC LIMIT 6");
                         while ($data = mysqli_fetch_array($rs)) {
                     ?>
-                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4 text-center">
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4" id="book-card">
                             <div class="card-deck">
                                 <div class="card text-center">
                                     <a href="view_book.php?isbn=<?= $data['isbn']; ?>" style="text-decoration:none;">
