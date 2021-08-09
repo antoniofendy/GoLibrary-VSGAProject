@@ -110,33 +110,39 @@
                                     <table border="0">
                                         <tr>
                                             <td style="color: #658fc4;" width="30%">ISBN</td>
-                                            <td>: <?= $data['isbn'] ?></td>
+                                            <td>:</td>
+                                            <td> <?= $data['isbn'] ?></td>
                                         </tr>
                                         <tr>
                                             <td style="color: #658fc4;" width="30%">Penerbit</td>
-                                            <td>: <?= $data['penerbit'] ?></td>
+                                            <td>:</td>
+                                            <td> <?= $data['penerbit'] ?></td>
                                         </tr>
                                         <tr>
                                             <td style="color: #658fc4;" width="30%">Bahasa</td>
-                                            <td>: <?= $data['bahasa'] ?></td>
+                                            <td>:</td>
+                                            <td> <?= $data['bahasa'] ?></td>
                                         </tr>
                                         <tr>
                                             <td style="color: #658fc4;" width="31%">Tahun</td>
-                                            <td>: <?= $data['tahun'] ?></td>
+                                            <td>:</td>
+                                            <td> <?= $data['tahun'] ?></td>
                                         </tr>
                                         <tr>
                                             <td style="color: #658fc4;" width="31%">Kategori</td>
-                                            <td>: <?= $data['kategori'] ?></td>
+                                            <td>:</td>
+                                            <td> <?= $data['kategori'] ?></td>
                                         </tr>
                                         <tr>
                                             <td style="color: #658fc4;" width="31%">Rating</td>
-                                            <td>: <i class="fas fa-star" style="color: #d4af37;"></i> <?= $data['rating'] ?></td>
+                                            <td>:</td>
+                                            <td> <i class="fas fa-star" style="color: #d4af37;"></i> <?= $data['rating'] ?></td>
                                         </tr>
                                     </table>
                                 </div>
                             </div>
-                            <a class="btn rounded-0 btn-primary mt-3" href="./admin/storage/book_file/<?= $data['berkas'] ?>" role="button" download="<?= $data['berkas'] ?>">
-                                <i class="fas fa-file-download"> </i> Download Ebook
+                            <a class="btn rounded-0 btn-primary mt-3" href="./vendor/pdfjs/web/viewer.html?file=../../../admin/storage/book_file/<?= $data['berkas']; ?>"  role="button">
+                                <i class="fas fa-eye"> </i> Baca Ebook
                             </a>
                         </div>
                     </div>
@@ -156,3 +162,5 @@
 
 </body>
 </html>
+
+<!-- href="./admin/storage/book_file/" -->
