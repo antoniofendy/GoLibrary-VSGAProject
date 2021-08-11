@@ -115,8 +115,8 @@ if (isset($_GET['message'])) {
                     <div class="form-row my-2">
                         <div class="col-12 col-lg-6 col-xl-8">
                             <label for="rating">Rating Buku</label>
-                            <input type="number" min="0" max="5" class="form-control" name="rating" id="rating" value="" step=0.01>
-                            <small id="number-error" style="color: red;"></small>
+                            <input type="number" min="0" max="5" class="form-control" name="rating" id="rating" value="" step="0.01">
+                            <small id="rating-error" style="color: red;"></small>
                         </div>
                     </div>
 
@@ -179,10 +179,6 @@ if (isset($_GET['message'])) {
             format: "Rating wajib ditulis dalam angka 0-5"
         }
     ];
-
-    let validations = {
-        
-    }
 
     function required(value){   
         return value.trim() !== "";

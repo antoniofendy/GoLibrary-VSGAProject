@@ -121,7 +121,7 @@ if ($data !== null) {
                     <div class="form-row my-2">
                         <div class="col-12 col-lg-6 col-xl-8">
                             <label for="rating">Rating Buku</label>
-                            <input type="number" min="0" max="5" class="form-control" name="rating" id="rating" value="<?= $data['rating'] ?>" required>
+                            <input type="number" min="0" max="5" class="form-control" name="rating" id="rating" step="0.01" value="<?= $data['rating'] ?>" required>
                         </div>
                     </div>
                         <p class="m-0">Semua kotak inputan wajib diisi.</p>
@@ -137,3 +137,7 @@ if ($data !== null) {
 } else {
     include '404.php';
 }
+
+?>
+
+
