@@ -82,6 +82,8 @@ include "./_include-admin/head.php";
 
 <script>
   $(document).ready(function() {
+
+    // Filling dataTable
     $('#bookTable').DataTable({
       "order": [0, 'asc'],
       "columns": [{
@@ -114,5 +116,6 @@ include "./_include-admin/head.php";
     $('#btn-delete').attr('href', url);
     $('#deleteModal').modal();
   }
+
 </script>
 

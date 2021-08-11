@@ -141,7 +141,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <a class="btn rounded-0 btn-primary mt-3" href="./vendor/pdfjs/web/viewer.html?file=../../../admin/storage/book_file/<?= $data['berkas']; ?>"  role="button">
+                            <a class="btn rounded-0 btn-primary mt-3" href="./vendor/pdfjs/web/viewer.html?file=../../../admin/storage/book_file/<?= $data['berkas']; ?>"  role="button" target="_blank">
                                 <i class="fas fa-eye"> </i> Baca Ebook
                             </a>
                         </div>

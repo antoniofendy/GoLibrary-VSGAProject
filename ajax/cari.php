@@ -1,12 +1,7 @@
 <?php 
-    // include '../lib/config.php';
-
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
-    $db = 'db_golibrary';
-
-    $con = mysqli_connect($host, $user, $pass, $db);
+    error_reporting(0);
+    include "../lib/config.php";
+    
 
     $limit = 5;
 
