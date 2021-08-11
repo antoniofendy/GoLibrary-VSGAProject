@@ -102,7 +102,7 @@ if (isset($_GET['message'])) {
                         <div class="col-12 col-lg-6 col-xl-8">
                             <label for="bahasa">Bahasa Terbit</label>
                             <input type="text" class="form-control" name="bahasa" id="bahasa" value="">
-                            <small id="tahun-error" style="color: red;"></small>
+                            <small id="bahasa-error" style="color: red;"></small>
                         </div>
                     </div>
                     <div class="form-row my-2">
@@ -115,7 +115,7 @@ if (isset($_GET['message'])) {
                     <div class="form-row my-2">
                         <div class="col-12 col-lg-6 col-xl-8">
                             <label for="rating">Rating Buku</label>
-                            <input type="number" min="0" max="5" class="form-control" name="rating" id="rating" value="">
+                            <input type="number" min="0" max="5" class="form-control" name="rating" id="rating" value="" step=0.01>
                             <small id="number-error" style="color: red;"></small>
                         </div>
                     </div>
@@ -176,9 +176,13 @@ if (isset($_GET['message'])) {
         rating = {
             id: "rating",
             required: "rating buku wajib diisi",
-            format: "Rating wajib ditulis dalam angka 4 digit"
+            format: "Rating wajib ditulis dalam angka 0-5"
         }
     ];
+
+    let validations = {
+        
+    }
 
     function required(value){   
         return value.trim() !== "";
@@ -187,6 +191,8 @@ if (isset($_GET['message'])) {
     function addErrorMessage(id, message){
         let small = document.getElementById(id+"-error");
         small.innerHTML = message + "<br>";
+        let str = window.location.href;
+        window.location.href = str.split("#")[0] + "#" + id;
     }
 
     function clearErrorMessage(){
@@ -201,6 +207,20 @@ if (isset($_GET['message'])) {
             return false;
         }
         return true
+    }
+
+    function yearDigit(value){
+        if(value.match(/^(181[2-9]|18[2-9]\d|19\d\d|2\d{3}|30[0-3]\d|304[0-8])$/)){
+            return false;
+        }
+        return true;
+    }
+
+    function ratingDigit(value){
+        if(value >= 0 && value <= 5){
+            return false;
+        }
+        return true;
     }
 
     function validasiForm() {
@@ -260,7 +280,7 @@ if (isset($_GET['message'])) {
             return false;
         }
 
-        // CHECK Penulis
+        // CHECK PENULIS
         let penulis_input = document.getElementById(penulis.id);
         if(required(penulis_input.value) === false){
             // Penulis error message not filled
@@ -276,7 +296,53 @@ if (isset($_GET['message'])) {
             return false;
         }
 
-        return false;
+        // CHECK TAHUN
+        let tahun_input = document.getElementById(tahun.id);
+        if(required(tahun_input.value)){
+            // Year regex
+            if(yearDigit(tahun_input.value)){
+                addErrorMessage(tahun.id, tahun.format);
+                return false;
+            }
+        }
+        else{
+            // Tahun error message not filled
+            addErrorMessage(tahun.id, tahun.required);
+            return false;
+        }
+
+        // CHECK BAHASA
+        let bahasa_input = document.getElementById(bahasa.id);
+        if(required(bahasa_input.value) === false){
+            // Bahasa error message not filled
+            addErrorMessage(bahasa.id, bahasa.required);
+            return false;
+        }
+
+        // CHECK KATEGORI
+        let kategori_input = document.getElementById(kategori.id);
+        if(required(kategori_input.value) === false){
+            // kategori error message not filled
+            addErrorMessage(kategori.id, kategori.required);
+            return false;
+        }
+
+        // CHECK RATING
+        let rating_input = document.getElementById(rating.id);
+        if(required(rating_input.value)){
+            // Rating regex
+            if(ratingDigit(rating_input.value)){
+                addErrorMessage(rating.id, rating.format);
+                return false;
+            }
+        }
+        else{
+            // rating error message not filled
+            addErrorMessage(rating.id, rating.required);
+            return false;
+        }
+
+        return true;
         
     }
 </script>
